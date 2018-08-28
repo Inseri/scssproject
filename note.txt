@@ -1,0 +1,12 @@
+ATTENTION : V0.90 !
+
+Code non nettoyé (mais responsive et fonctionnel).
+
+Documents à nettoyer : 
+- index.css
+
+Documents nettoyés :
+- index.php
+- header.php
+- footer.php
+- menu.js

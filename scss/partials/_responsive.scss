@@ -1,0 +1,124 @@
+/* RESPONSIVE */
+
+@media screen and (max-width: 1060px) {
+    .int {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: $w100;
+        height: 1200px;
+        background-color: #E3E2D5;
+    }
+    .module {
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .slogan {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .helpframe {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border: 1px solid #C3C2B5;
+        background-color: #D3D2C5;
+        position: fixed;
+        left: 5px;
+        top: 5px;
+        z-index: 200;
+    }
+    .rsframe {
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        width: 200px;
+        position: fixed;
+        z-index: 200;
+        top: 0;
+        right: 0;
+    }
+    .int {
+        display: grid;
+        grid-template-columns: auto;
+        width: $w100;
+        height: 1200px;
+        background-color: #E3E2D5;
+    }
+    .module {
+        height: 300px;
+    }
+    .navbar .menu {
+        display: block;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+    }
+    .menu:hover {
+        height: 40px;
+        border-bottom: 10px solid #000000;
+        background-color: #E80041;
+    }
+    .navcontalt {
+        height: 300px;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        color: #F3F3F3;
+        text-align: center;
+        padding-right: 10px;
+        background-color: transparent;
+        z-index: 1000;
+        overflow-x: hidden;
+    }
+    .navbtn {
+        border: none;
+        width: 100px;
+        height: 50px;
+        background-color: #000000;
+    }
+    .navbtn:hover {
+        height: 40px;
+        border-bottom: 10px solid #000000;
+        background-color: #E80041;
+        color: #000000;
+    }
+    .navbar .navcont {
+        display: none;
+    }
+    .slide1 {
+        @include animation(slideInRight 1s both);
+    }
+    .slide2 {
+        @include animation(slideInRight 1s both);
+        animation-delay: 0.5s;
+    }
+    .slide3 {
+        @include animation(slideInRight 1s both);
+        animation-delay: 1s;
+    }
+    .slide4 {
+        @include animation(slideInRight 1s both);
+        animation-delay: 1.5s;
+    }
+    .slide5 {
+        @include animation(slideInRight 1s both);
+        animation-delay: 2s;
+    }
+    .slide6 {
+        @include animation(slideInRight 1s both);
+        animation-delay: 2.5s;
+    }
+    @keyframes slideInRight {
+        0% {
+            transform: translateX(100%);
+            visibility: visible;
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}

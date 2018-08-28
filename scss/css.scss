@@ -1,0 +1,257 @@
+    @import 'compass';
+    @import "compass/typography/vertical_rhythm";
+    @import "compass/css3/border-radius";
+    @import "compass/utilities/sprites";
+    /*VARIABLES*/
+    
+    $w100: 100%;
+    /*MIXINS*/
+    
+    @mixin animation($animation) {
+        -moz-animation: $animation;
+        -o-animation: $animation;
+        -webkit-animation: $animation;
+        -ms-animation: $animation;
+        animation: $animation;
+    }
+    /*PLACEHOLDER*/
+    
+    %center {
+        text-align: center;
+    }
+    /* GLOBAL */
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    @import 'partials/header';
+    @import 'partials/footer';
+    /*SPRITES*/
+    
+    @import "icon/*.png";
+    @include all-icon-sprites;
+    /* BODY */
+    
+    .int {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        width: $w100;
+        height: calc(100vh - 100px);
+        background-color: #E3E2D5;
+    }
+    
+    .module {
+        height: calc(100vh - 100px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #D3D2C5;
+        background-color: #E3E2D5;
+    }
+    
+    .module:hover {
+        border: none;
+        background-color: #35345B;
+        box-shadow: 0px 0px 15px #F3F3F3 inset;
+    }
+    /*CSS MODULES*/
+    
+    .a,
+    .b,
+    .c,
+    .d {
+        background-color: #E3E2D5;
+    }
+    
+    .a:hover,
+    .b:hover,
+    .c:hover,
+    .d:hover {
+        background-color: #35345B;
+    }
+    /*FIN CSS MODULES*/
+    /*DEBUT CSS SUB MODULES*/
+    
+    .img {
+        width: auto;
+        height: 50px;
+    }
+    
+    .pict {
+        margin-bottom: 50px;
+    }
+    
+    .txtbig {
+        font-size: 1.8rem;
+        margin-bottom: 50px;
+    }
+    
+    .txtbtn {
+        font-size: 2rem;
+        padding-top: 5px;
+        text-align: center;
+        text-decoration: none;
+        color: #000000;
+    }
+    
+    .click {
+        @include border-radius(10px);
+        transition-property: box-shadow;
+        transition-duration: 1.5s;
+        box-shadow: 0px 0px 15px #000000;
+        width: 75%;
+        height: 50px;
+        background-color: #D3D2C5;
+        cursor: pointer;
+    }
+    
+    .click:hover {
+        box-shadow: 0px 0px 15px #F3F3F3;
+        width: 75%;
+        height: 50px;
+        background-color: #E80041;
+        cursor: pointer;
+    }
+    /*FIN CSS SUB MODULES*/
+    
+    .module:hover {
+        @include animation(pulse 1s both);
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale3d(1, 1, 1);
+        }
+        50% {
+            transform: scale3d(1, 0.95, 0.95);
+        }
+        100% {
+            transform: scale3d(1, 1, 1);
+        }
+    }
+    
+    .click:hover {
+        @include animation(shake 1s both);
+    }
+    
+    @keyframes shake {
+        0%,
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+            transform: translate3d(-10px, 0, 0);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+            transform: translate3d(10px, 0, 0);
+        }
+    }
+    /*BOUTONS RS*/
+    
+    .rsframe {
+        display: flex;
+        flex-direction: column;
+        width: 47px;
+        position: fixed;
+        z-index: 200;
+        top: calc(50% - 100px);
+        right: 0;
+    }
+    
+    .rs {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(227, 226, 213, 0.4);
+    }
+    
+    .f {
+        font-size: 52px;
+        color: #35345B;
+    }
+    
+    .l {
+        font-size: 52px;
+        color: #1F4FA8;
+    }
+    
+    .t {
+        font-size: 52px;
+        color: #007CC4;
+    }
+    
+    .g {
+        font-size: 52px;
+        color: #C42E00;
+    }
+    
+    .rs:hover {
+        @include animation(tada 1s both);
+    }
+    
+    @keyframes tada {
+        0% {
+            transform: scale3d(1, 1, 1);
+        }
+        10%,
+        20% {
+            transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+        }
+        30%,
+        50%,
+        70%,
+        90% {
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        }
+        40%,
+        60%,
+        80% {
+            transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        }
+        100% {
+            transform: scale3d(1, 1, 1);
+        }
+    }
+    /*AIDE*/
+    
+    .helpframe {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border: 1px solid #C3C2B5;
+        background-color: #D3D2C5;
+        position: fixed;
+        left: 5px;
+        bottom: 55px;
+        z-index: 200;
+    }
+    
+    .help {
+        font-size: 40px;
+        color: #000000;
+        padding-left: 9px;
+        padding-top: 4px;
+    }
+    
+    .helpframe:hover {
+        @include animation(spin 1s both infinite linear);
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+    
+    @import 'partials/responsive';

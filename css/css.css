@@ -1,0 +1,780 @@
+/*VARIABLES*/
+/*MIXINS*/
+/*PLACEHOLDER*/
+/* line 19, ../scss/css.scss */
+.txt {
+  text-align: center;
+}
+
+/* GLOBAL */
+/* line 24, ../scss/css.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+/* == VIDEO */
+/* line 6, ../scss/partials/_header.scss */
+.vidframeinit {
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: #111111;
+}
+
+/* line 13, ../scss/partials/_header.scss */
+.vidframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+  /* line 22, ../scss/partials/_header.scss */
+  .vidframe {
+    height: 300%;
+    top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16 / 9) {
+  /* line 29, ../scss/partials/_header.scss */
+  .vidframe {
+    width: 300%;
+    left: -100%;
+  }
+}
+@supports (object-fit: cover) {
+  /* line 36, ../scss/partials/_header.scss */
+  .vidframeinit > video {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+/* == LOGO + CATCHPHRASE*/
+/* line 48, ../scss/partials/_header.scss */
+.logobox {
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: transparent url(logo.png) no-repeat center center;
+  background-size: contain;
+  -moz-animation: fadeInDown 1s both;
+  -o-animation: fadeInDown 1s both;
+  -webkit-animation: fadeInDown 1s both;
+  -ms-animation: fadeInDown 1s both;
+  animation: fadeInDown 1s both;
+}
+
+/* line 60, ../scss/partials/_header.scss */
+.catch {
+  width: 100%;
+  color: #E3E2D5;
+  font-size: 2.5rem;
+  position: absolute;
+  z-index: 200;
+  top: 50%;
+  left: 0;
+  -moz-animation: fadeInUp 1s both;
+  -o-animation: fadeInUp 1s both;
+  -webkit-animation: fadeInUp 1s both;
+  -ms-animation: fadeInUp 1s both;
+  animation: fadeInUp 1s both;
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+/* == NAVBAR */
+/* line 103, ../scss/partials/_header.scss */
+.navbar {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  color: #F3F3F3;
+  background-color: #000000;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 100;
+}
+/* line 114, ../scss/partials/_header.scss */
+.navbar .logo {
+  height: 50px;
+  width: auto;
+}
+/* line 118, ../scss/partials/_header.scss */
+.navbar .navcont {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  color: #F3F3F3;
+}
+/* line 124, ../scss/partials/_header.scss */
+.navbar .menu {
+  display: none;
+}
+/* line 127, ../scss/partials/_header.scss */
+.navbar .navcontalt {
+  display: none;
+}
+
+/* line 132, ../scss/partials/_header.scss */
+.slogan {
+  text-align: left;
+  padding-top: 15px;
+  font-size: 16px;
+}
+
+/* line 138, ../scss/partials/_header.scss */
+.navbtn {
+  border: none;
+  height: 50px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 145, ../scss/partials/_header.scss */
+.navbtn:hover {
+  height: 40px;
+  border-bottom: 10px solid #000000;
+  background-color: #E80041;
+  color: #000000;
+}
+
+/* line 152, ../scss/partials/_header.scss */
+.btn {
+  color: #F3F3F3;
+}
+
+/* == animation navbtn */
+/* line 159, ../scss/partials/_header.scss */
+.fadeanim, .fade1, .fade2, .fade3, .fade4, .fade5, .fade6 {
+  -moz-animation: fadeInDown 1s both;
+  -o-animation: fadeInDown 1s both;
+  -webkit-animation: fadeInDown 1s both;
+  -ms-animation: fadeInDown 1s both;
+  animation: fadeInDown 1s both;
+}
+
+/* line 163, ../scss/partials/_header.scss */
+.fade1 {
+  animation-delay: 2.5s;
+}
+
+/* line 168, ../scss/partials/_header.scss */
+.fade2 {
+  animation-delay: 2s;
+}
+
+/* line 173, ../scss/partials/_header.scss */
+.fade3 {
+  animation-delay: 1.5s;
+}
+
+/* line 178, ../scss/partials/_header.scss */
+.fade4 {
+  animation-delay: 1s;
+}
+
+/* line 183, ../scss/partials/_header.scss */
+.fade5 {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+/*MIXINS*/
+/* FOOTER */
+/* line 6, ../scss/partials/_footer.scss */
+.foobar {
+  height: 50px;
+  width: 100%;
+  background-color: #000000;
+  color: #E3E2D5;
+  text-align: center;
+}
+/* line 12, ../scss/partials/_footer.scss */
+.foobar .flexfoo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+/* line 18, ../scss/partials/_footer.scss */
+.foobar .flexfoo .separator {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 23, ../scss/partials/_footer.scss */
+.foobar .flexfoo .pad {
+  padding-top: 10px;
+}
+/* line 26, ../scss/partials/_footer.scss */
+.foobar .flexfoo .bounce:hover {
+  -moz-animation: bounce 1s both;
+  -o-animation: bounce 1s both;
+  -webkit-animation: bounce 1s both;
+  -ms-animation: bounce 1s both;
+  animation: bounce 1s both;
+}
+/* line 30, ../scss/partials/_footer.scss */
+.foobar .flexfoo2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #000000;
+}
+/* line 37, ../scss/partials/_footer.scss */
+.foobar .flexfoo2 .spritebox {
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes bounce {
+  0%,
+    20%,
+    53%,
+    80%,
+    100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+    43% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, 30px, 0);
+  }
+  70% {
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, 15px, 0);
+  }
+  90% {
+    transform: translate3d(0, 4px, 0);
+  }
+}
+/*SPRITES*/
+/* line 104, icon/*.png */
+.icon-sprite, .icon-fb, .icon-ig, .icon-tw, .icon-yt {
+  background-image: url('/simplon/images/icon-s9d66891817.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-fb {
+  background-position: 0 0;
+}
+/* line 59, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-fb:hover, .icon-fb.fb-hover {
+  background-position: 0 -100px;
+}
+
+/* line 84, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-ig {
+  background-position: 0 -200px;
+}
+/* line 59, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-ig:hover, .icon-ig.ig-hover {
+  background-position: 0 -300px;
+}
+
+/* line 84, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-tw {
+  background-position: 0 -400px;
+}
+/* line 59, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-tw:hover, .icon-tw.tw-hover {
+  background-position: 0 -500px;
+}
+
+/* line 84, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-yt {
+  background-position: 0 -600px;
+}
+/* line 59, C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-yt:hover, .icon-yt.yt-hover {
+  background-position: 0 -700px;
+}
+
+/* BODY */
+/* line 37, ../scss/css.scss */
+.int {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: #E3E2D5;
+}
+
+/* line 45, ../scss/css.scss */
+.module {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #D3D2C5;
+  background-color: #E3E2D5;
+}
+
+/* line 55, ../scss/css.scss */
+.module:hover {
+  border: none;
+  background-color: #35345B;
+  box-shadow: 0px 0px 15px #F3F3F3 inset;
+}
+
+/*CSS MODULES*/
+/* line 62, ../scss/css.scss */
+.a,
+.b,
+.c,
+.d {
+  background-color: #E3E2D5;
+}
+
+/* line 69, ../scss/css.scss */
+.a:hover,
+.b:hover,
+.c:hover,
+.d:hover {
+  background-color: #35345B;
+}
+
+/*FIN CSS MODULES*/
+/*DEBUT CSS SUB MODULES*/
+/* line 78, ../scss/css.scss */
+.img {
+  width: auto;
+  height: 50px;
+}
+
+/* line 83, ../scss/css.scss */
+.pict {
+  margin-bottom: 50px;
+}
+
+/* line 87, ../scss/css.scss */
+.txtbig {
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+}
+
+/* line 92, ../scss/css.scss */
+.txtbtn {
+  font-size: 2rem;
+  padding-top: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* line 100, ../scss/css.scss */
+.click {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  transition-property: box-shadow;
+  transition-duration: 1.5s;
+  box-shadow: 0px 0px 15px #000000;
+  width: 75%;
+  height: 50px;
+  background-color: #D3D2C5;
+  cursor: pointer;
+}
+
+/* line 111, ../scss/css.scss */
+.click:hover {
+  box-shadow: 0px 0px 15px #F3F3F3;
+  width: 75%;
+  height: 50px;
+  background-color: #E80041;
+  cursor: pointer;
+}
+
+/*FIN CSS SUB MODULES*/
+/* line 120, ../scss/css.scss */
+.module:hover {
+  -moz-animation: pulse 1s both;
+  -o-animation: pulse 1s both;
+  -webkit-animation: pulse 1s both;
+  -ms-animation: pulse 1s both;
+  animation: pulse 1s both;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1, 0.95, 0.95);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+/* line 136, ../scss/css.scss */
+.click:hover {
+  -moz-animation: shake 1s both;
+  -o-animation: shake 1s both;
+  -webkit-animation: shake 1s both;
+  -ms-animation: shake 1s both;
+  animation: shake 1s both;
+}
+
+@keyframes shake {
+  0%,
+        100% {
+    transform: translate3d(0, 0, 0);
+  }
+  10%,
+        30%,
+        50%,
+        70%,
+        90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%,
+        40%,
+        60%,
+        80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+/*BOUTONS RS*/
+/* line 161, ../scss/css.scss */
+.rsframe {
+  display: flex;
+  flex-direction: column;
+  width: 47px;
+  position: fixed;
+  z-index: 200;
+  top: calc(50% - 100px);
+  right: 0;
+}
+
+/* line 171, ../scss/css.scss */
+.rs {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(227, 226, 213, 0.4);
+}
+
+/* line 177, ../scss/css.scss */
+.f {
+  font-size: 52px;
+  color: #35345B;
+}
+
+/* line 182, ../scss/css.scss */
+.l {
+  font-size: 52px;
+  color: #1F4FA8;
+}
+
+/* line 187, ../scss/css.scss */
+.t {
+  font-size: 52px;
+  color: #007CC4;
+}
+
+/* line 192, ../scss/css.scss */
+.g {
+  font-size: 52px;
+  color: #C42E00;
+}
+
+/* line 197, ../scss/css.scss */
+.rs:hover {
+  -moz-animation: tada 1s both;
+  -o-animation: tada 1s both;
+  -webkit-animation: tada 1s both;
+  -ms-animation: tada 1s both;
+  animation: tada 1s both;
+}
+
+@keyframes tada {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+        20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%,
+        50%,
+        70%,
+        90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%,
+        60%,
+        80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+/*AIDE*/
+/* line 226, ../scss/css.scss */
+.helpframe {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #C3C2B5;
+  background-color: #D3D2C5;
+  position: fixed;
+  left: 5px;
+  bottom: 55px;
+  z-index: 200;
+}
+
+/* line 238, ../scss/css.scss */
+.help {
+  font-size: 40px;
+  color: #000000;
+  padding-left: 9px;
+  padding-top: 4px;
+}
+
+/* line 245, ../scss/css.scss */
+.helpframe:hover {
+  -moz-animation: spin 1s both infinite linear;
+  -o-animation: spin 1s both infinite linear;
+  -webkit-animation: spin 1s both infinite linear;
+  -ms-animation: spin 1s both infinite linear;
+  animation: spin 1s both infinite linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* RESPONSIVE */
+@media screen and (max-width: 1060px) {
+  /* line 4, ../scss/partials/_responsive.scss */
+  .int {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    height: 1200px;
+    background-color: #E3E2D5;
+  }
+
+  /* line 11, ../scss/partials/_responsive.scss */
+  .module {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 850px) {
+  /* line 17, ../scss/partials/_responsive.scss */
+  .slogan {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  /* line 23, ../scss/partials/_responsive.scss */
+  .helpframe {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid #C3C2B5;
+    background-color: #D3D2C5;
+    position: fixed;
+    left: 5px;
+    top: 5px;
+    z-index: 200;
+  }
+
+  /* line 34, ../scss/partials/_responsive.scss */
+  .rsframe {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 200px;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: 0;
+  }
+
+  /* line 44, ../scss/partials/_responsive.scss */
+  .int {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+    height: 1200px;
+    background-color: #E3E2D5;
+  }
+
+  /* line 51, ../scss/partials/_responsive.scss */
+  .module {
+    height: 300px;
+  }
+
+  /* line 54, ../scss/partials/_responsive.scss */
+  .navbar .menu {
+    display: block;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+  }
+
+  /* line 60, ../scss/partials/_responsive.scss */
+  .menu:hover {
+    height: 40px;
+    border-bottom: 10px solid #000000;
+    background-color: #E80041;
+  }
+
+  /* line 65, ../scss/partials/_responsive.scss */
+  .navcontalt {
+    height: 300px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    color: #F3F3F3;
+    text-align: center;
+    padding-right: 10px;
+    background-color: transparent;
+    z-index: 1000;
+    overflow-x: hidden;
+  }
+
+  /* line 77, ../scss/partials/_responsive.scss */
+  .navbtn {
+    border: none;
+    width: 100px;
+    height: 50px;
+    background-color: #000000;
+  }
+
+  /* line 83, ../scss/partials/_responsive.scss */
+  .navbtn:hover {
+    height: 40px;
+    border-bottom: 10px solid #000000;
+    background-color: #E80041;
+    color: #000000;
+  }
+
+  /* line 89, ../scss/partials/_responsive.scss */
+  .navbar .navcont {
+    display: none;
+  }
+
+  /* line 92, ../scss/partials/_responsive.scss */
+  .slide1 {
+    -moz-animation: slideInRight 1s both;
+    -o-animation: slideInRight 1s both;
+    -webkit-animation: slideInRight 1s both;
+    -ms-animation: slideInRight 1s both;
+    animation: slideInRight 1s both;
+  }
+
+  /* line 95, ../scss/partials/_responsive.scss */
+  .slide2 {
+    -moz-animation: slideInRight 1s both;
+    -o-animation: slideInRight 1s both;
+    -webkit-animation: slideInRight 1s both;
+    -ms-animation: slideInRight 1s both;
+    animation: slideInRight 1s both;
+    animation-delay: 0.5s;
+  }
+
+  /* line 99, ../scss/partials/_responsive.scss */
+  .slide3 {
+    -moz-animation: slideInRight 1s both;
+    -o-animation: slideInRight 1s both;
+    -webkit-animation: slideInRight 1s both;
+    -ms-animation: slideInRight 1s both;
+    animation: slideInRight 1s both;
+    animation-delay: 1s;
+  }
+
+  /* line 103, ../scss/partials/_responsive.scss */
+  .slide4 {
+    -moz-animation: slideInRight 1s both;
+    -o-animation: slideInRight 1s both;
+    -webkit-animation: slideInRight 1s both;
+    -ms-animation: slideInRight 1s both;
+    animation: slideInRight 1s both;
+    animation-delay: 1.5s;
+  }
+
+  /* line 107, ../scss/partials/_responsive.scss */
+  .slide5 {
+    -moz-animation: slideInRight 1s both;
+    -o-animation: slideInRight 1s both;
+    -webkit-animation: slideInRight 1s both;
+    -ms-animation: slideInRight 1s both;
+    animation: slideInRight 1s both;
+    animation-delay: 2s;
+  }
+
+  /* line 111, ../scss/partials/_responsive.scss */
+  .slide6 {
+    -moz-animation: slideInRight 1s both;
+    -o-animation: slideInRight 1s both;
+    -webkit-animation: slideInRight 1s both;
+    -ms-animation: slideInRight 1s both;
+    animation: slideInRight 1s both;
+    animation-delay: 2.5s;
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      visibility: visible;
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,203 @@
+/* HEADER */
+
+
+/* == VIDEO */
+
+.vidframeinit {
+    overflow: hidden;
+    width: $w100;
+    height: calc(100vh - 50px);
+    background-color: #111111;
+}
+
+.vidframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $w100;
+    height: calc(100vh - 50px);
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .vidframe {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .vidframe {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@supports (object-fit: cover) {
+    .vidframeinit>video {
+        width: $w100;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}
+
+
+/* == LOGO + CATCHPHRASE*/
+
+.logobox {
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: $w100;
+    height: 50%;
+    background: transparent url(logo.png) no-repeat center center;
+    background-size: contain;
+    @include animation(fadeInDown 1s both);
+}
+
+.catch {
+    width: $w100;
+    color: #E3E2D5;
+    font-size: 2.5rem;
+    position: absolute;
+    z-index: 200;
+    top: 50%;
+    left: 0;
+    @include animation(fadeInUp 1s both);
+    animation-delay: 1s;
+}
+
+.txt {
+    @extend %center;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+
+/* == NAVBAR */
+
+.navbar {
+    position: relative;
+    width: $w100;
+    height: 50px;
+    color: #F3F3F3;
+    background-color: #000000;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 100;
+    .logo {
+        height: 50px;
+        width: auto;
+    }
+    .navcont {
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        color: #F3F3F3;
+    }
+    .menu {
+        display: none;
+    }
+    .navcontalt {
+        display: none;
+    }
+}
+
+.slogan {
+    text-align: left;
+    padding-top: 15px;
+    font-size: $base-font-size;
+}
+
+.navbtn {
+    border: none;
+    height: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.navbtn:hover {
+    height: 40px;
+    border-bottom: 10px solid #000000;
+    background-color: #E80041;
+    color: #000000;
+}
+
+.btn {
+    color: #F3F3F3;
+}
+
+
+/* == animation navbtn */
+
+.fadeanim {
+    @include animation(fadeInDown 1s both);
+}
+
+.fade1 {
+    @extend .fadeanim;
+    animation-delay: 2.5s;
+}
+
+.fade2 {
+    @extend .fadeanim;
+    animation-delay: 2s;
+}
+
+.fade3 {
+    @extend .fadeanim;
+    animation-delay: 1.5s;
+}
+
+.fade4 {
+    @extend .fadeanim;
+    animation-delay: 1s;
+}
+
+.fade5 {
+    @extend .fadeanim;
+    animation-delay: 0.5s;
+}
+
+.fade6 {
+    @extend .fadeanim;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
